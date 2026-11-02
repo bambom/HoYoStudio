@@ -37,6 +37,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.extractFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extractFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.export_gi_ab = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayAll = new System.Windows.Forms.ToolStripMenuItem();
             this.enablePreview = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +89,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.sceneTreeView = new AssetStudioGUI.GOHierarchy();
             this.treeSearch = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.assetListView = new System.Windows.Forms.ListView();
@@ -133,7 +136,6 @@
             this.exportAnimatorwithselectedAnimationClipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goToSceneHierarchyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showOriginalFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sceneTreeView = new AssetStudioGUI.GOHierarchy();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -167,7 +169,7 @@
             this.miscToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -178,43 +180,65 @@
             this.loadFolderToolStripMenuItem,
             this.toolStripMenuItem1,
             this.extractFileToolStripMenuItem,
-            this.extractFolderToolStripMenuItem});
+            this.extractFolderToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.export_gi_ab});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // loadFileToolStripMenuItem
             // 
             this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
-            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadFileToolStripMenuItem.Text = "Load file";
             this.loadFileToolStripMenuItem.Click += new System.EventHandler(this.loadFile_Click);
             // 
             // loadFolderToolStripMenuItem
             // 
             this.loadFolderToolStripMenuItem.Name = "loadFolderToolStripMenuItem";
-            this.loadFolderToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.loadFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadFolderToolStripMenuItem.Text = "Load folder";
             this.loadFolderToolStripMenuItem.Click += new System.EventHandler(this.loadFolder_Click);
+
+            // 
+            // export_gi_ab
+            // 
+            this.export_gi_ab.Name = "Export Ab";
+            this.export_gi_ab.Size = new System.Drawing.Size(180, 22);
+            this.export_gi_ab.Text = "Export Ab(D:\\WORK\\Genshin\\GI_Out_AB)";
+            this.export_gi_ab.Click += new System.EventHandler(this.loadExportABFolder_Click);
+
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(141, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // extractFileToolStripMenuItem
             // 
             this.extractFileToolStripMenuItem.Name = "extractFileToolStripMenuItem";
-            this.extractFileToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.extractFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.extractFileToolStripMenuItem.Text = "Extract file";
             this.extractFileToolStripMenuItem.Click += new System.EventHandler(this.extractFileToolStripMenuItem_Click);
             // 
             // extractFolderToolStripMenuItem
             // 
             this.extractFolderToolStripMenuItem.Name = "extractFolderToolStripMenuItem";
-            this.extractFolderToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.extractFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.extractFolderToolStripMenuItem.Text = "Extract folder";
             this.extractFolderToolStripMenuItem.Click += new System.EventHandler(this.extractFolderToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
+            // 
+            // export_gi_ab
+            // 
+            this.export_gi_ab.Name = "export_gi_ab";
+            this.export_gi_ab.Size = new System.Drawing.Size(180, 22);
+            this.export_gi_ab.Text = "Export_GI_AB";
             // 
             // optionsToolStripMenuItem
             // 
@@ -227,14 +251,14 @@
             this.toolStripMenuItem16,
             this.showExpOpt});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(66, 21);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // displayAll
             // 
             this.displayAll.CheckOnClick = true;
             this.displayAll.Name = "displayAll";
-            this.displayAll.Size = new System.Drawing.Size(207, 22);
+            this.displayAll.Size = new System.Drawing.Size(223, 22);
             this.displayAll.Text = "Display all assets";
             this.displayAll.ToolTipText = "Check this option will display all types assets. Not extractable assets can expor" +
     "t the RAW file.";
@@ -246,7 +270,7 @@
             this.enablePreview.CheckOnClick = true;
             this.enablePreview.CheckState = System.Windows.Forms.CheckState.Checked;
             this.enablePreview.Name = "enablePreview";
-            this.enablePreview.Size = new System.Drawing.Size(207, 22);
+            this.enablePreview.Size = new System.Drawing.Size(223, 22);
             this.enablePreview.Text = "Enable preview";
             this.enablePreview.ToolTipText = "Toggle the loading and preview of readable assets, such as images, sounds, text, " +
     "etc.\r\nDisable preview if you have performance or compatibility issues.";
@@ -258,7 +282,7 @@
             this.displayInfo.CheckOnClick = true;
             this.displayInfo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.displayInfo.Name = "displayInfo";
-            this.displayInfo.Size = new System.Drawing.Size(207, 22);
+            this.displayInfo.Size = new System.Drawing.Size(223, 22);
             this.displayInfo.Text = "Display asset infromation";
             this.displayInfo.ToolTipText = "Toggle the overlay that shows information about each asset, eg. image size, forma" +
     "t, audio bitrate, etc.";
@@ -269,7 +293,7 @@
             this.toolStripMenuItem14.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.specifyUnityVersion});
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(207, 22);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(223, 22);
             this.toolStripMenuItem14.Text = "Specify Unity version";
             // 
             // specifyUnityVersion
@@ -283,21 +307,21 @@
             this.toolStripMenuItem17.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.specifyGame});
             this.toolStripMenuItem17.Name = "toolStripMenuItem17";
-            this.toolStripMenuItem17.Size = new System.Drawing.Size(207, 22);
+            this.toolStripMenuItem17.Size = new System.Drawing.Size(223, 22);
             this.toolStripMenuItem17.Text = "Specify Game";
             // 
             // specifyGame
             // 
             this.specifyGame.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.specifyGame.Name = "specifyGame";
-            this.specifyGame.Size = new System.Drawing.Size(121, 23);
+            this.specifyGame.Size = new System.Drawing.Size(121, 25);
             // 
             // toolStripMenuItem16
             // 
             this.toolStripMenuItem16.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.specifyAIVersion});
             this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(207, 22);
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(223, 22);
             this.toolStripMenuItem16.Text = "Specify AI version";
             // 
             // specifyAIVersion
@@ -306,13 +330,13 @@
             this.specifyAIVersion.Items.AddRange(new object[] {
             "None"});
             this.specifyAIVersion.Name = "specifyAIVersion";
-            this.specifyAIVersion.Size = new System.Drawing.Size(121, 23);
+            this.specifyAIVersion.Size = new System.Drawing.Size(121, 25);
             this.specifyAIVersion.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
             // 
             // showExpOpt
             // 
             this.showExpOpt.Name = "showExpOpt";
-            this.showExpOpt.Size = new System.Drawing.Size(207, 22);
+            this.showExpOpt.Size = new System.Drawing.Size(223, 22);
             this.showExpOpt.Text = "Export options";
             this.showExpOpt.Click += new System.EventHandler(this.showExpOpt_Click);
             // 
@@ -326,46 +350,46 @@
             this.exportSelectedObjectsmergeToolStripMenuItem,
             this.exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem});
             this.modelToolStripMenuItem.Name = "modelToolStripMenuItem";
-            this.modelToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.modelToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.modelToolStripMenuItem.Text = "Model";
             // 
             // exportAllObjectssplitToolStripMenuItem1
             // 
             this.exportAllObjectssplitToolStripMenuItem1.Name = "exportAllObjectssplitToolStripMenuItem1";
-            this.exportAllObjectssplitToolStripMenuItem1.Size = new System.Drawing.Size(382, 22);
+            this.exportAllObjectssplitToolStripMenuItem1.Size = new System.Drawing.Size(417, 22);
             this.exportAllObjectssplitToolStripMenuItem1.Text = "Export all objects (split)";
             this.exportAllObjectssplitToolStripMenuItem1.Click += new System.EventHandler(this.exportAllObjectssplitToolStripMenuItem1_Click);
             // 
             // exportSelectedObjectsToolStripMenuItem
             // 
             this.exportSelectedObjectsToolStripMenuItem.Name = "exportSelectedObjectsToolStripMenuItem";
-            this.exportSelectedObjectsToolStripMenuItem.Size = new System.Drawing.Size(382, 22);
+            this.exportSelectedObjectsToolStripMenuItem.Size = new System.Drawing.Size(417, 22);
             this.exportSelectedObjectsToolStripMenuItem.Text = "Export selected objects (split)";
             this.exportSelectedObjectsToolStripMenuItem.Click += new System.EventHandler(this.exportSelectedObjectsToolStripMenuItem_Click);
             // 
             // exportSelectedObjectsWithAnimationClipToolStripMenuItem
             // 
             this.exportSelectedObjectsWithAnimationClipToolStripMenuItem.Name = "exportSelectedObjectsWithAnimationClipToolStripMenuItem";
-            this.exportSelectedObjectsWithAnimationClipToolStripMenuItem.Size = new System.Drawing.Size(382, 22);
+            this.exportSelectedObjectsWithAnimationClipToolStripMenuItem.Size = new System.Drawing.Size(417, 22);
             this.exportSelectedObjectsWithAnimationClipToolStripMenuItem.Text = "Export selected objects (split) + selected AnimationClips";
             this.exportSelectedObjectsWithAnimationClipToolStripMenuItem.Click += new System.EventHandler(this.exportObjectswithAnimationClipMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(379, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(414, 6);
             // 
             // exportSelectedObjectsmergeToolStripMenuItem
             // 
             this.exportSelectedObjectsmergeToolStripMenuItem.Name = "exportSelectedObjectsmergeToolStripMenuItem";
-            this.exportSelectedObjectsmergeToolStripMenuItem.Size = new System.Drawing.Size(382, 22);
+            this.exportSelectedObjectsmergeToolStripMenuItem.Size = new System.Drawing.Size(417, 22);
             this.exportSelectedObjectsmergeToolStripMenuItem.Text = "Export selected objects (merge)";
             this.exportSelectedObjectsmergeToolStripMenuItem.Click += new System.EventHandler(this.exportSelectedObjectsmergeToolStripMenuItem_Click);
             // 
             // exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem
             // 
             this.exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem.Name = "exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem";
-            this.exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem.Size = new System.Drawing.Size(382, 22);
+            this.exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem.Size = new System.Drawing.Size(417, 22);
             this.exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem.Text = "Export selected objects (merge) + selected AnimationClips";
             this.exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem.Click += new System.EventHandler(this.exportSelectedObjectsmergeWithAnimationClipToolStripMenuItem_Click);
             // 
@@ -383,46 +407,46 @@
             this.toolStripSeparator2,
             this.toolStripMenuItem10});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.exportToolStripMenuItem.Text = "Export";
             // 
             // exportAllAssetsMenuItem
             // 
             this.exportAllAssetsMenuItem.Name = "exportAllAssetsMenuItem";
-            this.exportAllAssetsMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.exportAllAssetsMenuItem.Size = new System.Drawing.Size(284, 22);
             this.exportAllAssetsMenuItem.Text = "All assets";
             this.exportAllAssetsMenuItem.Click += new System.EventHandler(this.exportAllAssetsMenuItem_Click);
             // 
             // exportSelectedAssetsMenuItem
             // 
             this.exportSelectedAssetsMenuItem.Name = "exportSelectedAssetsMenuItem";
-            this.exportSelectedAssetsMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.exportSelectedAssetsMenuItem.Size = new System.Drawing.Size(284, 22);
             this.exportSelectedAssetsMenuItem.Text = "Selected assets";
             this.exportSelectedAssetsMenuItem.Click += new System.EventHandler(this.exportSelectedAssetsMenuItem_Click);
             // 
             // exportFilteredAssetsMenuItem
             // 
             this.exportFilteredAssetsMenuItem.Name = "exportFilteredAssetsMenuItem";
-            this.exportFilteredAssetsMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.exportFilteredAssetsMenuItem.Size = new System.Drawing.Size(284, 22);
             this.exportFilteredAssetsMenuItem.Text = "Filtered assets";
             this.exportFilteredAssetsMenuItem.Click += new System.EventHandler(this.exportFilteredAssetsMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(281, 6);
             // 
             // exportAnimatorWithSelectedAnimationClipToolStripMenuItem
             // 
             this.exportAnimatorWithSelectedAnimationClipToolStripMenuItem.Name = "exportAnimatorWithSelectedAnimationClipToolStripMenuItem";
-            this.exportAnimatorWithSelectedAnimationClipToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.exportAnimatorWithSelectedAnimationClipToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
             this.exportAnimatorWithSelectedAnimationClipToolStripMenuItem.Text = "Animator + selected AnimationClips";
             this.exportAnimatorWithSelectedAnimationClipToolStripMenuItem.Click += new System.EventHandler(this.exportAnimatorwithAnimationClipMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(281, 6);
             // 
             // toolStripMenuItem2
             // 
@@ -431,27 +455,27 @@
             this.toolStripMenuItem5,
             this.toolStripMenuItem6});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(266, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(284, 22);
             this.toolStripMenuItem2.Text = "Raw";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem4.Text = "All assets";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem5.Text = "Selected assets";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem6.Text = "Filtered assets";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
@@ -462,34 +486,34 @@
             this.toolStripMenuItem8,
             this.toolStripMenuItem9});
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(266, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(284, 22);
             this.toolStripMenuItem3.Text = "Dump";
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem7.Text = "All assets";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem8.Text = "Selected assets";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem9.Text = "Filtered assets";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(281, 6);
             // 
             // toolStripMenuItem10
             // 
@@ -498,27 +522,27 @@
             this.toolStripMenuItem12,
             this.toolStripMenuItem13});
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(266, 22);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(284, 22);
             this.toolStripMenuItem10.Text = "Asset list to XML";
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem11.Text = "All assets";
             this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem12.Text = "Selected assets";
             this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(165, 22);
             this.toolStripMenuItem13.Text = "Filtered assets";
             this.toolStripMenuItem13.Click += new System.EventHandler(this.toolStripMenuItem13_Click);
             // 
@@ -527,7 +551,7 @@
             this.filterTypeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.allToolStripMenuItem});
             this.filterTypeToolStripMenuItem.Name = "filterTypeToolStripMenuItem";
-            this.filterTypeToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.filterTypeToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
             this.filterTypeToolStripMenuItem.Text = "Filter Type";
             // 
             // allToolStripMenuItem
@@ -536,7 +560,7 @@
             this.allToolStripMenuItem.CheckOnClick = true;
             this.allToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-            this.allToolStripMenuItem.Size = new System.Drawing.Size(88, 22);
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
             this.allToolStripMenuItem.Text = "All";
             this.allToolStripMenuItem.Click += new System.EventHandler(this.typeToolStripMenuItem_Click);
             // 
@@ -547,7 +571,7 @@
             this.exportClassStructuresMenuItem,
             this.console});
             this.debugMenuItem.Name = "debugMenuItem";
-            this.debugMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.debugMenuItem.Size = new System.Drawing.Size(59, 21);
             this.debugMenuItem.Text = "Debug";
             // 
             // toolStripMenuItem15
@@ -556,14 +580,14 @@
             this.toolStripMenuItem15.CheckOnClick = true;
             this.toolStripMenuItem15.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            this.toolStripMenuItem15.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItem15.Size = new System.Drawing.Size(207, 22);
             this.toolStripMenuItem15.Text = "Show error message";
             this.toolStripMenuItem15.Click += new System.EventHandler(this.toolStripMenuItem15_Click);
             // 
             // exportClassStructuresMenuItem
             // 
             this.exportClassStructuresMenuItem.Name = "exportClassStructuresMenuItem";
-            this.exportClassStructuresMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.exportClassStructuresMenuItem.Size = new System.Drawing.Size(207, 22);
             this.exportClassStructuresMenuItem.Text = "Export class structures";
             this.exportClassStructuresMenuItem.Click += new System.EventHandler(this.exportClassStructuresMenuItem_Click);
             // 
@@ -573,7 +597,7 @@
             this.console.CheckOnClick = true;
             this.console.CheckState = System.Windows.Forms.CheckState.Checked;
             this.console.Name = "console";
-            this.console.Size = new System.Drawing.Size(191, 22);
+            this.console.Size = new System.Drawing.Size(207, 22);
             this.console.Text = "Enable Console";
             this.console.ToolTipText = "Check this option to log all events on a debug console.";
             this.console.CheckedChanged += new System.EventHandler(this.console_CheckedChanged);
@@ -584,20 +608,20 @@
             this.buildCABMapToolStripMenuItem,
             this.buildAssetMapToolStripMenuItem});
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
-            this.miscToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.miscToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
             this.miscToolStripMenuItem.Text = "Misc.";
             // 
             // buildCABMapToolStripMenuItem
             // 
             this.buildCABMapToolStripMenuItem.Name = "buildCABMapToolStripMenuItem";
-            this.buildCABMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buildCABMapToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.buildCABMapToolStripMenuItem.Text = "Build CABMap";
             this.buildCABMapToolStripMenuItem.Click += new System.EventHandler(this.buildBLKMapToolStripMenuItem_Click);
             // 
             // buildAssetMapToolStripMenuItem
             // 
             this.buildAssetMapToolStripMenuItem.Name = "buildAssetMapToolStripMenuItem";
-            this.buildAssetMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buildAssetMapToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.buildAssetMapToolStripMenuItem.Text = "Build AssetMap";
             this.buildAssetMapToolStripMenuItem.Click += new System.EventHandler(this.buildAssetMapToolStripMenuItem_Click);
             // 
@@ -605,7 +629,7 @@
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -619,7 +643,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2MinSize = 400;
-            this.splitContainer1.Size = new System.Drawing.Size(1264, 657);
+            this.splitContainer1.Size = new System.Drawing.Size(1264, 656);
             this.splitContainer1.SplitterDistance = 482;
             this.splitContainer1.TabIndex = 2;
             this.splitContainer1.TabStop = false;
@@ -634,7 +658,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(17, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(480, 635);
+            this.tabControl1.Size = new System.Drawing.Size(480, 634);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabPageSelected);
@@ -645,10 +669,21 @@
             this.tabPage1.Controls.Add(this.treeSearch);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(472, 609);
+            this.tabPage1.Size = new System.Drawing.Size(472, 608);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Scene Hierarchy";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // sceneTreeView
+            // 
+            this.sceneTreeView.CheckBoxes = true;
+            this.sceneTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sceneTreeView.HideSelection = false;
+            this.sceneTreeView.Location = new System.Drawing.Point(0, 21);
+            this.sceneTreeView.Name = "sceneTreeView";
+            this.sceneTreeView.Size = new System.Drawing.Size(472, 587);
+            this.sceneTreeView.TabIndex = 1;
+            this.sceneTreeView.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.sceneTreeView_AfterCheck);
             // 
             // treeSearch
             // 
@@ -656,7 +691,7 @@
             this.treeSearch.ForeColor = System.Drawing.SystemColors.GrayText;
             this.treeSearch.Location = new System.Drawing.Point(0, 0);
             this.treeSearch.Name = "treeSearch";
-            this.treeSearch.Size = new System.Drawing.Size(472, 20);
+            this.treeSearch.Size = new System.Drawing.Size(472, 21);
             this.treeSearch.TabIndex = 0;
             this.treeSearch.Text = " Search ";
             this.treeSearch.TextChanged += new System.EventHandler(this.treeSearch_TextChanged);
@@ -670,7 +705,7 @@
             this.tabPage2.Controls.Add(this.listSearch);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(472, 609);
+            this.tabPage2.Size = new System.Drawing.Size(472, 608);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Asset List";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -687,9 +722,9 @@
             this.assetListView.FullRowSelect = true;
             this.assetListView.GridLines = true;
             this.assetListView.HideSelection = false;
-            this.assetListView.Location = new System.Drawing.Point(0, 20);
+            this.assetListView.Location = new System.Drawing.Point(0, 21);
             this.assetListView.Name = "assetListView";
-            this.assetListView.Size = new System.Drawing.Size(472, 589);
+            this.assetListView.Size = new System.Drawing.Size(472, 587);
             this.assetListView.TabIndex = 1;
             this.assetListView.UseCompatibleStateImageBehavior = false;
             this.assetListView.View = System.Windows.Forms.View.Details;
@@ -729,7 +764,7 @@
             this.listSearch.ForeColor = System.Drawing.SystemColors.GrayText;
             this.listSearch.Location = new System.Drawing.Point(0, 0);
             this.listSearch.Name = "listSearch";
-            this.listSearch.Size = new System.Drawing.Size(472, 20);
+            this.listSearch.Size = new System.Drawing.Size(472, 21);
             this.listSearch.TabIndex = 0;
             this.listSearch.Text = " Filter ";
             this.listSearch.TextChanged += new System.EventHandler(this.ListSearchTextChanged);
@@ -741,7 +776,7 @@
             this.tabPage3.Controls.Add(this.classesListView);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(472, 609);
+            this.tabPage3.Size = new System.Drawing.Size(472, 608);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Asset Classes";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -757,7 +792,7 @@
             this.classesListView.Location = new System.Drawing.Point(0, 0);
             this.classesListView.MultiSelect = false;
             this.classesListView.Name = "classesListView";
-            this.classesListView.Size = new System.Drawing.Size(472, 609);
+            this.classesListView.Size = new System.Drawing.Size(472, 608);
             this.classesListView.TabIndex = 0;
             this.classesListView.UseCompatibleStateImageBehavior = false;
             this.classesListView.View = System.Windows.Forms.View.Details;
@@ -779,7 +814,7 @@
             // 
             this.progressbarPanel.Controls.Add(this.progressBar1);
             this.progressbarPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressbarPanel.Location = new System.Drawing.Point(0, 635);
+            this.progressbarPanel.Location = new System.Drawing.Point(0, 634);
             this.progressbarPanel.Name = "progressbarPanel";
             this.progressbarPanel.Padding = new System.Windows.Forms.Padding(1, 3, 1, 1);
             this.progressbarPanel.Size = new System.Drawing.Size(480, 20);
@@ -802,7 +837,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(776, 633);
+            this.tabControl2.Size = new System.Drawing.Size(776, 632);
             this.tabControl2.TabIndex = 4;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
@@ -811,7 +846,7 @@
             this.tabPage4.Controls.Add(this.previewPanel);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(768, 607);
+            this.tabPage4.Size = new System.Drawing.Size(768, 606);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Preview";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -830,7 +865,7 @@
             this.previewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.previewPanel.Location = new System.Drawing.Point(0, 0);
             this.previewPanel.Name = "previewPanel";
-            this.previewPanel.Size = new System.Drawing.Size(768, 607);
+            this.previewPanel.Size = new System.Drawing.Size(768, 606);
             this.previewPanel.TabIndex = 1;
             this.previewPanel.Resize += new System.EventHandler(this.preview_Resize);
             // 
@@ -841,7 +876,7 @@
             this.assetInfoLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.assetInfoLabel.Location = new System.Drawing.Point(4, 7);
             this.assetInfoLabel.Name = "assetInfoLabel";
-            this.assetInfoLabel.Size = new System.Drawing.Size(0, 13);
+            this.assetInfoLabel.Size = new System.Drawing.Size(0, 12);
             this.assetInfoLabel.TabIndex = 0;
             // 
             // FMODpanel
@@ -860,7 +895,7 @@
             this.FMODpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FMODpanel.Location = new System.Drawing.Point(0, 0);
             this.FMODpanel.Name = "FMODpanel";
-            this.FMODpanel.Size = new System.Drawing.Size(768, 607);
+            this.FMODpanel.Size = new System.Drawing.Size(768, 606);
             this.FMODpanel.TabIndex = 2;
             this.FMODpanel.Visible = false;
             // 
@@ -870,7 +905,7 @@
             this.FMODcopyright.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FMODcopyright.Location = new System.Drawing.Point(214, 337);
             this.FMODcopyright.Name = "FMODcopyright";
-            this.FMODcopyright.Size = new System.Drawing.Size(283, 13);
+            this.FMODcopyright.Size = new System.Drawing.Size(341, 12);
             this.FMODcopyright.TabIndex = 9;
             this.FMODcopyright.Text = "Audio Engine supplied by FMOD by Firelight Technologies.";
             // 
@@ -880,7 +915,7 @@
             this.FMODinfoLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FMODinfoLabel.Location = new System.Drawing.Point(269, 235);
             this.FMODinfoLabel.Name = "FMODinfoLabel";
-            this.FMODinfoLabel.Size = new System.Drawing.Size(0, 13);
+            this.FMODinfoLabel.Size = new System.Drawing.Size(0, 12);
             this.FMODinfoLabel.TabIndex = 8;
             // 
             // FMODtimerLabel
@@ -889,7 +924,7 @@
             this.FMODtimerLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FMODtimerLabel.Location = new System.Drawing.Point(460, 235);
             this.FMODtimerLabel.Name = "FMODtimerLabel";
-            this.FMODtimerLabel.Size = new System.Drawing.Size(78, 13);
+            this.FMODtimerLabel.Size = new System.Drawing.Size(95, 12);
             this.FMODtimerLabel.TabIndex = 7;
             this.FMODtimerLabel.Text = "0:00.0 / 0:00.0";
             // 
@@ -899,7 +934,7 @@
             this.FMODstatusLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FMODstatusLabel.Location = new System.Drawing.Point(213, 235);
             this.FMODstatusLabel.Name = "FMODstatusLabel";
-            this.FMODstatusLabel.Size = new System.Drawing.Size(47, 13);
+            this.FMODstatusLabel.Size = new System.Drawing.Size(47, 12);
             this.FMODstatusLabel.TabIndex = 6;
             this.FMODstatusLabel.Text = "Stopped";
             // 
@@ -976,7 +1011,7 @@
             this.fontPreviewBox.Location = new System.Drawing.Point(0, 0);
             this.fontPreviewBox.Name = "fontPreviewBox";
             this.fontPreviewBox.ReadOnly = true;
-            this.fontPreviewBox.Size = new System.Drawing.Size(768, 607);
+            this.fontPreviewBox.Size = new System.Drawing.Size(768, 606);
             this.fontPreviewBox.TabIndex = 0;
             this.fontPreviewBox.Text = resources.GetString("fontPreviewBox.Text");
             this.fontPreviewBox.Visible = false;
@@ -988,7 +1023,7 @@
             this.glControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.glControl1.Location = new System.Drawing.Point(0, 0);
             this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(768, 607);
+            this.glControl1.Size = new System.Drawing.Size(768, 606);
             this.glControl1.TabIndex = 4;
             this.glControl1.Visible = false;
             this.glControl1.VSync = false;
@@ -1008,7 +1043,7 @@
             this.textPreviewBox.Name = "textPreviewBox";
             this.textPreviewBox.ReadOnly = true;
             this.textPreviewBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textPreviewBox.Size = new System.Drawing.Size(768, 607);
+            this.textPreviewBox.Size = new System.Drawing.Size(768, 606);
             this.textPreviewBox.TabIndex = 2;
             this.textPreviewBox.Visible = false;
             this.textPreviewBox.WordWrap = false;
@@ -1021,7 +1056,7 @@
             this.classTextBox.Name = "classTextBox";
             this.classTextBox.ReadOnly = true;
             this.classTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.classTextBox.Size = new System.Drawing.Size(768, 607);
+            this.classTextBox.Size = new System.Drawing.Size(768, 606);
             this.classTextBox.TabIndex = 3;
             this.classTextBox.Visible = false;
             this.classTextBox.WordWrap = false;
@@ -1031,7 +1066,7 @@
             this.tabPage5.Controls.Add(this.dumpTextBox);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(768, 607);
+            this.tabPage5.Size = new System.Drawing.Size(768, 606);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Dump";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1044,7 +1079,7 @@
             this.dumpTextBox.Name = "dumpTextBox";
             this.dumpTextBox.ReadOnly = true;
             this.dumpTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.dumpTextBox.Size = new System.Drawing.Size(768, 607);
+            this.dumpTextBox.Size = new System.Drawing.Size(768, 606);
             this.dumpTextBox.TabIndex = 0;
             this.dumpTextBox.WordWrap = false;
             // 
@@ -1052,7 +1087,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 633);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 632);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(776, 22);
             this.statusStrip1.TabIndex = 2;
@@ -1089,26 +1124,26 @@
             this.goToSceneHierarchyToolStripMenuItem,
             this.showOriginalFileToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(304, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(327, 114);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.copyToolStripMenuItem.Text = "Copy text";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // exportSelectedAssetsToolStripMenuItem
             // 
             this.exportSelectedAssetsToolStripMenuItem.Name = "exportSelectedAssetsToolStripMenuItem";
-            this.exportSelectedAssetsToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.exportSelectedAssetsToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.exportSelectedAssetsToolStripMenuItem.Text = "Export selected assets";
             this.exportSelectedAssetsToolStripMenuItem.Click += new System.EventHandler(this.exportSelectedAssetsToolStripMenuItem_Click);
             // 
             // exportAnimatorwithselectedAnimationClipMenuItem
             // 
             this.exportAnimatorwithselectedAnimationClipMenuItem.Name = "exportAnimatorwithselectedAnimationClipMenuItem";
-            this.exportAnimatorwithselectedAnimationClipMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.exportAnimatorwithselectedAnimationClipMenuItem.Size = new System.Drawing.Size(326, 22);
             this.exportAnimatorwithselectedAnimationClipMenuItem.Text = "Export Animator + selected AnimationClips";
             this.exportAnimatorwithselectedAnimationClipMenuItem.Visible = false;
             this.exportAnimatorwithselectedAnimationClipMenuItem.Click += new System.EventHandler(this.exportAnimatorwithAnimationClipMenuItem_Click);
@@ -1116,7 +1151,7 @@
             // goToSceneHierarchyToolStripMenuItem
             // 
             this.goToSceneHierarchyToolStripMenuItem.Name = "goToSceneHierarchyToolStripMenuItem";
-            this.goToSceneHierarchyToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.goToSceneHierarchyToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.goToSceneHierarchyToolStripMenuItem.Text = "Go to scene hierarchy";
             this.goToSceneHierarchyToolStripMenuItem.Visible = false;
             this.goToSceneHierarchyToolStripMenuItem.Click += new System.EventHandler(this.goToSceneHierarchyToolStripMenuItem_Click);
@@ -1124,21 +1159,10 @@
             // showOriginalFileToolStripMenuItem
             // 
             this.showOriginalFileToolStripMenuItem.Name = "showOriginalFileToolStripMenuItem";
-            this.showOriginalFileToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.showOriginalFileToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.showOriginalFileToolStripMenuItem.Text = "Show original file";
             this.showOriginalFileToolStripMenuItem.Visible = false;
             this.showOriginalFileToolStripMenuItem.Click += new System.EventHandler(this.showOriginalFileToolStripMenuItem_Click);
-            // 
-            // sceneTreeView
-            // 
-            this.sceneTreeView.CheckBoxes = true;
-            this.sceneTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sceneTreeView.HideSelection = false;
-            this.sceneTreeView.Location = new System.Drawing.Point(0, 20);
-            this.sceneTreeView.Name = "sceneTreeView";
-            this.sceneTreeView.Size = new System.Drawing.Size(472, 589);
-            this.sceneTreeView.TabIndex = 1;
-            this.sceneTreeView.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.sceneTreeView_AfterCheck);
             // 
             // AssetStudioGUIForm
             // 
@@ -1294,6 +1318,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
         private System.Windows.Forms.ToolStripComboBox specifyGame;
         private System.Windows.Forms.ToolStripMenuItem buildAssetMapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem export_gi_ab;
     }
 }
 

@@ -41,6 +41,38 @@ namespace AssetStudio
             Load(toReadFile);
         }
 
+        public void LoadExportAbFolder(string path)
+        {
+            MergeSplitAssets(path, true);
+            var files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories).ToArray();
+            var filesList = files.ToList();
+            var toReadFile = ProcessingSplitFiles(filesList);
+            LoadExportAB(toReadFile);
+        }
+        private void LoadExportAB(string[] files)
+        {
+            foreach (var file in files)
+            {
+                importFiles.Add(file);
+                importFilesHash.Add(Path.GetFileName(file));
+            }
+
+            Progress.Reset();
+            //use a for loop because list size can change
+            for (var i = 0; i < importFiles.Count; i++)
+            {
+                LoadFileExportAB(importFiles[i]);
+                Progress.Report(i + 1, importFiles.Count);
+            }
+
+            importFiles.Clear();
+            importFilesHash.Clear();
+            assetsFileListHash.Clear();
+            CABManager.offsets.Clear();
+
+            ReadAssets();
+            ProcessAssets();
+        }
         private void Load(string[] files)
         {
             foreach (var file in files)
@@ -72,6 +104,39 @@ namespace AssetStudio
             LoadFile(reader);
         }
 
+        private void LoadFileExportAB(string fullName)
+        {
+            var reader = new FileReader(fullName, Game);
+            LoadFileExportAB(reader);
+        }
+
+        private void LoadFileExportAB(FileReader reader)
+        {
+            switch (reader.FileType)
+            {
+                case FileType.AssetsFile:
+                    LoadAssetsFile(reader);
+                    break;
+                case FileType.BundleFile:
+                    LoadBundleFile(reader);
+                    break;
+                case FileType.HoyoFile:
+                    LoadHoYoFileExportAB(reader);
+                    break;
+                case FileType.WebFile:
+                    LoadWebFile(reader);
+                    break;
+                case FileType.GZipFile:
+                    LoadFile(DecompressGZip(reader));
+                    break;
+                case FileType.BrotliFile:
+                    LoadFile(DecompressBrotli(reader));
+                    break;
+                case FileType.ZipFile:
+                    LoadZipFile(reader);
+                    break;
+            }
+        }
         private void LoadFile(FileReader reader)
         {
             switch (reader.FileType)
@@ -322,7 +387,44 @@ namespace AssetStudio
                 reader.Dispose();
             }
         }
-
+        private void LoadHoYoFileExportAB(FileReader reader)
+        {
+            Logger.Info("Loading " + reader.FileName);
+            try
+            {
+                HoYoFile hoyoFile;
+                reader.BundlePos = CABManager.offsets.TryGetValue(reader.FullPath, out var list) ? list.ToArray() : Array.Empty<long>();
+                hoyoFile = new HoYoFile();
+                hoyoFile.LoadFileExportAB(reader);
+                foreach (var bundle in hoyoFile.Bundles)
+                {
+                    foreach (var file in bundle.Value)
+                    {
+                        var dummyPath = Path.Combine(Path.GetDirectoryName(reader.FullPath), file.fileName);
+                        var cabReader = new FileReader(dummyPath, file.stream, Game);
+                        if (cabReader.FileType == FileType.AssetsFile)
+                        {
+                            var assetsFile = new SerializedFile(cabReader, this, reader.FullPath);
+                            CheckStrippedVersion(assetsFile);
+                            assetsFileList.Add(assetsFile);
+                            assetsFileListHash.Add(assetsFile.fileName);
+                        }
+                        else
+                        {
+                            resourceFileReaders[file.fileName] = cabReader; //TODO
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error($"Error while reading file {reader.FileName}", e);
+            }
+            finally
+            {
+                reader.Dispose();
+            }
+        }
         private void LoadHoYoFile(FileReader reader)
         {
             Logger.Info("Loading " + reader.FileName);

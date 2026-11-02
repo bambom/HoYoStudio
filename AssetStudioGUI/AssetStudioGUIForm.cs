@@ -199,6 +199,21 @@ namespace AssetStudioGUI
             }
         }
 
+        private async void loadExportABFolder_Click(object sender, EventArgs e)
+        {
+            var openFolderDialog = new OpenFolderDialog();
+            openFolderDialog.InitialFolder = openDirectoryBackup;
+            if (openFolderDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                ResetForm();
+                openDirectoryBackup = openFolderDialog.Folder;
+                assetsManager.SpecifyUnityVersion = specifyUnityVersion.Text;
+                assetsManager.Game = Studio.Game;
+                await Task.Run(() => assetsManager.LoadExportAbFolder(openFolderDialog.Folder));
+            }
+        }
+
+
         private async void extractFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
